@@ -21,14 +21,128 @@ $termAPI = new aits_terms($period, $campusCode, $senderAppID);
 ```
 #3
 $outputFormat = 'json';
-$termAPI->getAITSTerms($outputFormat);
+$data = $termAPI->getAITSTerms($outputFormat);
+print_r($data);
 ```
 
-### Return Result from Previous Call (cached)
+#### `$data` Outputs
+```
+{  
+   "object":"Term",
+   "version":"1_0",
+   "list":[  
+      {  
+         "queryPeriod":"current",
+         "queryCampus":"uic",
+         "term":[  
+            {  
+               "termCode":"220178",
+               "termDescription":"Fall 2017 - Chicago",
+               "startDate":"2017-08-28",
+               "endDate":"2017-12-16",
+               "finaidProcYear":{  
+                  "code":"1718",
+                  "description":"2017-2018"
+               },
+               "academicYear":{  
+                  "code":"1718",
+                  "description":"2017-2018"
+               },
+               "housingStartDate":"2017-08-28",
+               "housingEndDate":"2017-12-16",
+               "termType":{  
+                  "code":"S",
+                  "description":"Semester"
+               },
+               "termPart":[  
+                  {  
+                     "termCode":"220178",
+                     "description":"Full Term",
+                     "startDate":"2017-08-28",
+                     "endDate":"2017-12-08",
+                     "weeks":16,
+                     "censusDate":"2017-08-28"
+                  },
+                  {  
+                     "termCode":"220178",
+                     "description":"First Half",
+                     "startDate":"2017-08-28",
+                     "endDate":"2017-10-20",
+                     "weeks":8,
+                     "censusDate":"2017-08-28"
+                  },
+                  {  
+                     "termCode":"220178",
+                     "description":"Second Half",
+                     "startDate":"2017-10-23",
+                     "endDate":"2017-12-08",
+                     "weeks":8,
+                     "censusDate":"2017-10-23"
+                  },
+                  {  
+                     "termCode":"220178",
+                     "description":"Dentistry",
+                     "startDate":"2017-08-28",
+                     "endDate":"2017-12-15",
+                     "weeks":16,
+                     "censusDate":"2017-08-28"
+                  },
+                  {  
+                     "termCode":"220178",
+                     "description":"Medicine",
+                     "startDate":"2017-08-14",
+                     "endDate":"2017-12-15",
+                     "weeks":16,
+                     "censusDate":"2017-08-14"
+                  },
+                  {  
+                     "termCode":"220178",
+                     "description":"Tuition Waiver Fall",
+                     "startDate":"2017-08-21",
+                     "endDate":"2017-12-15",
+                     "weeks":17,
+                     "censusDate":"2017-08-28"
+                  },
+                  {  
+                     "termCode":"220178",
+                     "description":"Urbana Calendar",
+                     "startDate":"2017-08-28",
+                     "endDate":"2017-12-13",
+                     "weeks":16,
+                     "censusDate":"2017-08-28"
+                  },
+                  {  
+                     "termCode":"220178",
+                     "description":"Extramural",
+                     "startDate":"2017-08-28",
+                     "endDate":"2017-12-08",
+                     "weeks":16,
+                     "censusDate":"2017-08-28"
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
+
+```
+
+### Return Result from Previous Call (PHP Object)
 ```
 #3
 $outputFormat = 'json';
-$termAPI->getCachedResult();
+$data = $termAPI->getCachedResult();
+print_r($data);
+```
+#### `$data` Outputs
+```
+stdClass Object
+(
+    [type] => json
+    [data] => {"object":"Term","version":"1_0","list":[{"queryPeriod":"current","queryCampus":"uic","term":[{"termCode":"220178","termDescription":"Fall 2017 - Chicago","startDate":"2017-08-28","endDate":"2017-12-16","finaidProcYear":{"code":"1718","description":"2017-2018"},"academicYear":{"code":"1718","description":"2017-2018"},"housingStartDate":"2017-08-28","housingEndDate":"2017-12-16","termType":{"code":"S","description":"Semester"},"termPart":[{"termCode":"220178","description":"Full Term","startDate":"2017-08-28","endDate":"2017-12-08","weeks":16,"censusDate":"2017-08-28"},{"termCode":"220178","description":"First Half","startDate":"2017-08-28","endDate":"2017-10-20","weeks":8,"censusDate":"2017-08-28"},{"termCode":"220178","description":"Second Half","startDate":"2017-10-23","endDate":"2017-12-08","weeks":8,"censusDate":"2017-10-23"},{"termCode":"220178","description":"Dentistry","startDate":"2017-08-28","endDate":"2017-12-15","weeks":16,"censusDate":"2017-08-28"},{"termCode":"220178","description":"Medicine","startDate":"2017-08-14","endDate":"2017-12-15","weeks":16,"censusDate":"2017-08-14"},{"termCode":"220178","description":"Tuition Waiver Fall","startDate":"2017-08-21","endDate":"2017-12-15","weeks":17,"censusDate":"2017-08-28"},{"termCode":"220178","description":"Urbana Calendar","startDate":"2017-08-28","endDate":"2017-12-13","weeks":16,"censusDate":"2017-08-28"},{"termCode":"220178","description":"Extramural","startDate":"2017-08-28","endDate":"2017-12-08","weeks":16,"censusDate":"2017-08-28"}]}]}]}
+)
+
 ```
 
 ## Examples:
