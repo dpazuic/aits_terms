@@ -6,17 +6,19 @@ PHP Library for using the AITS Term API (contact AITS for additional details on 
 ## Usage
 To use the library, you need to:
 
-1. Include library in your program 
-2. Instantiate an object of class `aits_term`
-3. Use one of the public methods on the object
+* Include library in your program 
 ```
-# 1
 include_once('aits_terms.class.php');
-$period = current;
-$campusCode = 'uic';
-#2
+```
+* Instantiate an object of class `aits_term`
+```
+$period = 'current'; // Also accepted: 22017X|current|nextterm|lastterm|nextsemester|lastsemester|nextyear|lastyear 
+$campusCode = 'uic'; // Also accepted: uic|uiuc|uis|100|200|400
 $termAPI = new aits_terms($period, $campusCode, $senderAppID);
 ```
+* Use one of the public methods on the object
+
+
 ### Getting Results from an API call
 ```
 #3
