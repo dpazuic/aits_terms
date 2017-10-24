@@ -76,7 +76,7 @@ class aits_terms
      *
      * @param $period
      */
-    public function setPeriod($period)
+    private function setPeriod($period)
     {
 
         // Validate Period
@@ -92,7 +92,7 @@ class aits_terms
      * @param $code
      * @throws Exception
      */
-    public function setCampusCode($campusCode)
+    private function setCampusCode($campusCode)
     {
 
         if(empty($campusCode)){
@@ -113,7 +113,7 @@ class aits_terms
      *
      * @param $period
      */
-    public function setSenderAppId($senderAppID)
+    private function setSenderAppId($senderAppID)
     {
 
         // Check to see if the $senderAppID was set
