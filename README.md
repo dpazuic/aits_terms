@@ -14,6 +14,7 @@ include_once('aits_terms.class.php');
 ```
 $period = 'current'; // Also accepted: 22017X|current|nextterm|lastterm|nextsemester|lastsemester|nextyear|lastyear 
 $campusCode = 'uic'; // Also accepted: uic|uiuc|uis|100|200|400
+$senderAppID = 'YOUR_SENDER_APP_ID'; // Contact AITS for this
 $termAPI = new aits_terms($period, $campusCode, $senderAppID);
 ```
 * Use one of the public methods on the object
