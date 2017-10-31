@@ -97,7 +97,7 @@ class aits_terms
 
         if(empty($campusCode)){
 
-            throw new Exception('The campus code cannot be blank. Please specify a campus code: 1 for UIUC, 2 for UIC, 4 for UIS.');
+            throw new \Exception('The campus code cannot be blank. Please specify a campus code: 1 for UIUC, 2 for UIC, 4 for UIS.');
 
         }
 
@@ -119,7 +119,7 @@ class aits_terms
         // Check to see if the $senderAppID was set
         if(empty($senderAppID)) {
 
-            throw new Exception('The senderAppId cannot be blank. Please contact AITS for a senderAppId');
+            throw new \Exception('The senderAppId cannot be blank. Please contact AITS for a senderAppId');
 
         }
 
@@ -220,7 +220,7 @@ class aits_terms
             // Check to see that $obj is an object, thus has data
             if (!is_array($values)) {
 
-                throw new Exception('Communication with the AITS term API is not available. Try again later.');
+                throw new \Exception('Communication with the AITS term API is not available. Try again later.');
 
             }
 
@@ -232,14 +232,14 @@ class aits_terms
             // Check to see that $obj is an object, thus has data
             if (!is_object($obj)) {
 
-                throw new Exception('Communication with the AITS term API is not available. Try again later.');
+                throw new \Exception('Communication with the AITS term API is not available. Try again later.');
 
             }
 
         }
 
         // Cache the response in $this->result
-        $this->result = new stdClass();
+        $this->result = new \stdClass();
         $this->result->type = $outputFormat;
         $this->result->data = $outputFormat == 'object' ? $obj : $response;
 
@@ -275,7 +275,7 @@ class aits_terms
         // If $campus matches exactly one
         if(count($campusArray) > 1) {
             // $campus matches more than one check
-            throw new Exception('The campus code: "' . $campus . '" has too many matches. Specify uic, uiuc or uis.');
+            throw new \Exception('The campus code: "' . $campus . '" has too many matches. Specify uic, uiuc or uis.');
 
         } else if(count($campusArray) == 1){
 
@@ -298,7 +298,7 @@ class aits_terms
         }  else {
 
             // $campus does not match checks
-            throw new Exception('The campus code: "' . $campus . '" is not valid. Specify uic, uiuc or uis.');
+            throw new \Exception('The campus code: "' . $campus . '" is not valid. Specify uic, uiuc or uis.');
 
         }
 
@@ -323,7 +323,7 @@ class aits_terms
         if(empty($periodArray)){
 
             // Throw exception, banner term code is not valid
-            throw new Exception('The period code: "' . $period . '" is not a valid. Accepted values are valid Banner Term Codes ie. "120168", "220171", "420168" or relative periods: "current", "nextTerm", "lastTerm", "nextSemester", "lastSemester"');
+            throw new \Exception('The period code: "' . $period . '" is not a valid. Accepted values are valid Banner Term Codes ie. "120168", "220171", "420168" or relative periods: "current", "nextTerm", "lastTerm", "nextSemester", "lastSemester"');
 
         }
 
@@ -343,7 +343,7 @@ class aits_terms
             } else {
 
                 // Throw exception, banner term code is not valid
-                throw new Exception('The period code: "' . $period . '" is not a valid Banner Term code.');
+                throw new \Exception('The period code: "' . $period . '" is not a valid Banner Term code.');
             }
 
         }
@@ -402,7 +402,7 @@ class aits_terms
                 return "uis";
                 break;
             default:
-                throw new Exception('The period code: "' . $period . '" cannot be used to compute the campus. Explicitly provide the campus when instantiating aits_terms');
+                throw new \Exception('The period code: "' . $period . '" cannot be used to compute the campus. Explicitly provide the campus when instantiating aits_terms');
                 break;
 
         }
@@ -425,7 +425,7 @@ class aits_terms
         if(empty($formatArray)){
 
             // Throw exception, banner term code is not valid
-            throw new Exception('The format: "' . $format . '" is not supported. Use json or xml');
+            throw new \Exception('The format: "' . $format . '" is not supported. Use json or xml');
 
         }
 
@@ -451,7 +451,7 @@ class aits_terms
 
             if(empty($result->list[0]->term[0]->termCode)){
 
-                throw new Exception('Unable to retrieve term code for the current term.');
+                throw new \Exception('Unable to retrieve term code for the current term.');
 
             }
 
@@ -508,7 +508,7 @@ class aits_terms
 
         } else {
 
-            throw new Exception('Unable to retrieve data for the current term.');
+            throw new \Exception('Unable to retrieve data for the current term.');
         }
 
     }
