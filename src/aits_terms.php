@@ -6,7 +6,7 @@
  * Time: 10:27 AM
  */
 
-//namespace aits_terms;
+namespace dpazuic;
 
 
 class aits_terms

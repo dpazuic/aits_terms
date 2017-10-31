@@ -8,7 +8,7 @@
 
 try {
 
-    include_once('aits_terms.class.php');
+    include_once('../src/aits_terms.php');
 
     if(empty($argv[1])){
 
