@@ -8,14 +8,18 @@ To use the library, you need to:
 
 * Include library in your program 
 ```
-include_once('aits_terms.class.php');
+include_once('aits_terms.php');
 ```
-* Instantiate an object of class `aits_term`
+* or use composer `composer require dpazuic\aits_terms`
+```
+include_once('vendor/autoload.php');
+```
+* Instantiate an object of class `dpazuic\aits_term`
 ```
 $period = 'current'; // Also accepted: 22017X|current|nextterm|lastterm|nextsemester|lastsemester|nextyear|lastyear 
 $campusCode = 'uic'; // Also accepted: uic|uiuc|uis|100|200|400
 $senderAppID = 'YOUR_SENDER_APP_ID'; // Contact AITS for this
-$termAPI = new aits_terms($period, $campusCode, $senderAppID);
+$termAPI = new dpazuic\aits_terms($period, $campusCode, $senderAppID);
 ```
 * Use one of the public methods on the object
 
@@ -149,5 +153,5 @@ stdClass Object
 ```
 
 ## Examples:
-You can use the attached `cli-test.php` file from the command line to test functionality.
+You can use the attached `examples/cli-test.php` file from the command line to test functionality.
 `php cli-test.php YOUR_SENDER_APP_ID 220178 uic json`
