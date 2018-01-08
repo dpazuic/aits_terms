@@ -365,7 +365,7 @@ class aits_terms
                 break;
 
             case('lastyear'):
-                $period = 'lastYear';
+                $period = 'pastYear';
                 break;
 
             case('current'):
